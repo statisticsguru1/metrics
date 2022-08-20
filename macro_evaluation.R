@@ -27,6 +27,6 @@ mymetrics=function(actual,predicted){
   macros=data.frame(macroPrecision, macroRecall, macroF1)
   
   liss=list(accuracy,perclass,macros)
-  names(liss)<-c("Accuracy","Per class metrics","Macro averaged metrics")
+  names(liss)=c("Accuracy","Per class metrics","Macro averaged metrics")
   liss
 }
