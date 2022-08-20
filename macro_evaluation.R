@@ -1,6 +1,6 @@
 # accuracy metrics
 
-mymetrics<-function(actual,predicted){
+mymetrics=function(actual,predicted){
   # confusion matric
   cm = as.matrix(table(Actual = actual, Predicted = predicted))
   # Basic variables
