@@ -35,7 +35,7 @@ mymetrics=function(actual,predicted){
 
 mysummaryFun=function(data, lev = NULL, model = NULL){
   # confusion metric
-  cm = as.matrix(table(data$obs,data$pred))
+  cm<- as.matrix(table(data$obs,data$pred))
   # Basic variables
   n = sum(cm) # number of instances
   nc = nrow(cm) # number of classes
@@ -51,8 +51,6 @@ mysummaryFun=function(data, lev = NULL, model = NULL){
   f1 = 2 * precision * recall / (precision + recall) 
 
   # Macro averaged
-  
   out=mean(f1)
-  names(out) <- "Macro_F1_score"
-  out
+  c(Macro_F1_score = out)
 }
