@@ -35,7 +35,7 @@ mymetrics=function(actual,predicted){
 
 mysummaryFun=function(data, lev = NULL, model = NULL){
   # confusion metric
-  cm = as.matrix(table(Actual = data$obs, Predicted = - data$pred))
+  cm = as.matrix(table(data$obs,data$pred))
   # Basic variables
   n = sum(cm) # number of instances
   nc = nrow(cm) # number of classes
