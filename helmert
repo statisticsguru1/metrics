@@ -1,0 +1,28 @@
+helmert<-function(x=NULL,n=NULL){
+  
+  if(is.null(x)&is.null(n)){  # ensures that atleast one Argument is provided
+    error<-"Error:Provide atleast one urgument"
+    return(error)
+  }else if(!is.null(x)){  # evaluates whether it is n or x provided
+    if(!is.factor(x)){
+      error<-"Error:x should be a factor or ordered factor"
+      return(error)
+    } else{
+     levels<-length(levels(x)) 
+    }
+  } else{
+levels<-n 
+}
+row<-NULL
+
+for(i in 0:(levels-2)){
+  row<-cbind(row,c(rep(0,i),((levels-(i+1))/(levels-i)),rep(-1/(levels-i),levels-((i+1)))))
+}
+
+if(!is.null(x)){
+rownames(row)<-levels(x)
+} else{
+  rownames(row)<-levels(x) 
+}
+row
+}
